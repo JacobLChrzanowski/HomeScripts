@@ -2,7 +2,7 @@
 # Written by HARM VEENSTRA
 
 #Set the output location for .csv file
-$output = 'C:\local\ssid_passwords.csv'
+$output = 'ssid_passwords.csv'
  
 #Retrieve all WLAN profiles, loop through them and try to get the passsword
 $wlanprofiles = (netsh wlan show profiles) | select-string ': '
