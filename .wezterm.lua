@@ -1,4 +1,5 @@
 local wezterm = require 'wezterm'
+local act = wezterm.action
 local config = {}
 
 -- kitty key encoding
@@ -11,10 +12,13 @@ config.term = 'xterm-256color'
 --config.window_background_opacity = 0
 --config.text_background_opacity = 0.8
 --config.win32_system_backdrop = 'Mica'
+
 -- Style
 -- https://wezfurlong.org/wezterm/colorschemes/s/index.html#solarized-dark-terminalsexy
 config.color_scheme = 'Solarized (dark) (terminal.sexy)'
 config.color_scheme = 'OceanicNext (base16)'
+--config.color_scheme = 'Oceanic-Next'
+--config.color_scheme = 'OceanicMaterial'
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 -- Font
@@ -24,6 +28,18 @@ config.font = wezterm.font(
     'Fira Code Regular',
     {}
 )
+-- X11
+config.enable_wayland = true
+
+-- Key Combos
+config.keys = {
+  -- paste from the clipboard
+  { key = 'V', mods = 'CTRL', action = act.PasteFrom 'Clipboard' },
+  -- paste from the primary selection
+  { key = 'V', mods = 'CTRL', action = act.PasteFrom 'PrimarySelection' },
+  -- CTRL-SHIFT-l activates the debug overlay
+  { key = 'L', mods = 'CTRL', action = wezterm.action.ShowDebugOverlay },
+}
 
 -- Window Frame
 config.window_frame = {
