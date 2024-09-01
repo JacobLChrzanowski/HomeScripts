@@ -1,0 +1,12 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.pdf]
+
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.pdf\shell]
+
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.pdf\shell\Edit]
+@="Edit with LibreOffice Draw"
+"Icon"="\"C:\\Program Files\\LibreOffice\\program\\sdraw.exe\",0\""
+
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.pdf\shell\Edit\command]
+@="\"sdraw\" \"%1\""
